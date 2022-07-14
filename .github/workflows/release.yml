@@ -1,4 +1,4 @@
-name: "Upload Pkg"
+name: Upload Pkg
 on:
   release:
     types:
@@ -12,3 +12,8 @@ jobs:
         with:
           name: package
           path: the_pkg/
+      - uses: benc-uk/workflow-dispatch@v1
+        with:
+          repo: harrysolovay/nothing_to_see_here_either
+          workflow: publish.yml
+          token: ${{ secrets.GITHUB_TOKEN }}

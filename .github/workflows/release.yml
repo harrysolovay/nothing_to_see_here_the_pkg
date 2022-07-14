@@ -1,0 +1,14 @@
+name: "Upload Pkg"
+on:
+  release:
+    types:
+      - created
+jobs:
+  upload_pkg:
+    name: Upload Publishable Pkg
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: the_pkg/
